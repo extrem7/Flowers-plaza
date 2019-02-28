@@ -1,0 +1,121 @@
+body {
+  cursor: default;
+  color: @gray;
+  font-family: "Exo 2", sans-serif;
+  &:before {
+    content: '';
+    position: absolute;
+    right: -35px;
+    top: -55px;
+    z-index: -1;
+    .size(368px, 660px);
+    background: url("../img/flower-2.png");
+  }
+}
+
+.button {
+  display: block;
+  cursor: pointer;
+  text-align: center;
+  white-space: nowrap;
+  vertical-align: middle;
+  -webkit-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  user-select: none;
+  border: none;
+  outline: none;
+}
+
+.btn-white {
+  min-width: 190px;
+  padding: 5px 15px;
+  background-color: #ffffff;
+  color: @dark !important;
+  text-align: center;
+  border: 1px solid @white;
+  transition: all .2s;
+  cursor: pointer;
+  &:hover {
+    background-color: darken(white, 10%);
+  }
+}
+
+.btn-green{
+  min-width: 190px;
+  padding: 5px 15px;
+  background-color: #60be74;
+  color:white!important;
+  text-align: center;
+  transition: all .2s;
+  cursor: pointer;
+  &:hover {
+    background-color: darken(#60be74, 10%);
+  }
+}
+
+.section-title {
+  font-size: 24px;
+  font-weight: 500;
+  text-transform: uppercase;
+}
+
+.owl-carousel {
+  .owl-nav {
+    button {
+      position: absolute;
+      top: ~" calc(50% - 40px) ";
+      font-size: 20px !important;
+      .size(30px);
+      .flex-center();
+      border: 1px solid @salate !important;
+      color: #0ca65d !important;
+      transition: all .3s;
+      &:hover {
+        background-color: @salate !important;
+        color: white !important;
+      }
+      &.disabled {
+        pointer-events: none;
+        background-color: darken(@salate, 10%) !important;
+        border-color: darken(@salate, 10%) !important;
+        color: white !important;
+      }
+      &.owl-prev {
+        left: 0;
+      }
+      &.owl-next {
+        right: 0;
+      }
+    }
+  }
+}
+
+.select2 {
+  .select2-selection {
+    border: 1px solid @white;
+    border-radius: 0;
+    height: 30px!important;
+    background-color: @white;
+  }
+}
+
+hr {
+  margin: 20px 0;
+  border: 1px solid @white
+}
+
+@media (max-width: 1200px) {
+  body {
+    &:before {
+      display: none;
+    }
+  }
+}
+
+
+@media (max-width: 576px) {
+  .section-title{
+    text-align: center;
+  }
+}

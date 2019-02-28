@@ -1,0 +1,242 @@
+.header {
+  position: relative;
+  z-index: 2;
+  margin-bottom: 25px;
+  &-top {
+    padding: 35px 0;
+    .info {
+      display: flex;
+      align-items: center;
+      &:first-child {
+        margin-right: 80px;
+      }
+      img {
+        margin-right: 18px;
+      }
+      .title {
+        font-weight: 700;
+        display: block;
+      }
+      .text {
+        font-weight: 300;
+      }
+    }
+  }
+  .logo {
+    position: relative;
+    z-index: 1;
+  }
+  &-bottom {
+    background-color: @green;
+    color: white;
+    font-weight: 500;
+    text-transform: uppercase;
+    //padding: 16px 0 20px;
+    .container {
+      padding-left: 200px;
+      position: relative;
+    }
+  }
+  .navbar {
+    z-index: 1;
+    padding: 0;
+    &-nav {
+      & > li:not(last-child) {
+        margin-right: 30px;
+      }
+    }
+    .dropdown-menu {
+      display: block;
+      visibility: hidden;
+      opacity: 0;
+      transition: opacity .3s;
+      background-color: white;
+      .box-shadow(0 7px 24px rgba(0, 0, 0, 0.28));
+      border-radius: 0;
+      border: none;
+      top: 74px;
+      text-transform: none;
+      &:hover {
+        opacity: 1;
+        visibility: visible;
+      }
+      a:hover {
+        color: @green;
+        text-decoration: underline;
+        background-color: white !important;
+      }
+      a {
+        font-size: 14px;
+        color: #666666;
+      }
+    }
+  }
+  .navbar-toggler {
+    display: none;
+    z-index: 3;
+    background: transparent;
+    border: none;
+    outline: 0;
+    position: absolute;
+    top: 3px;
+    &[aria-expanded="true"] {
+      span {
+        &:first-child {
+          transform: rotate(135deg);
+          top: 9px
+        }
+        &:nth-child(2) {
+          opacity: 0
+        }
+        &:nth-child(3) {
+          transform: rotate(-135deg);
+          bottom: 5px
+        }
+      }
+    }
+    span {
+      display: block;
+      width: 30px;
+      margin-bottom: 4px;
+      height: 3px;
+      background-color: black;
+      border-radius: 32px;
+      position: relative;
+      -webkit-transition: all 0.3s ease-in-out;
+      transition: all 0.3s ease-in-out;
+    }
+  }
+  .dropdown-toggle {
+    &:hover {
+      & + .dropdown-menu {
+        opacity: 1;
+        visibility: visible;
+      }
+    }
+    &:after {
+      border: none;
+      font-family: "Font Awesome 5 Free";
+      content: "\f078";
+      font-size: 12px;
+      position: relative;
+      top: 2px;
+    }
+  }
+  .nav-link {
+    padding: 24px 5px 28px;
+  }
+  .mini-cart {
+    display: flex;
+    align-items: center;
+    position: relative;
+    img {
+      margin-left: 7px;
+    }
+    .count {
+      .flex-center();
+      position: absolute;
+      .size(24px);
+      background-color: @pink;
+      font-size: 14px;
+      font-weight: 700;
+      right: -15px;
+      bottom: -5px;
+      border-radius: 50%;
+    }
+  }
+  &:after {
+    content: '';
+    position: absolute;
+    left: -20px;
+    top: 10px;
+    .size(389px, 921px);
+    background: url("../img/flower-1.png");
+  }
+  @media (max-width: 1600px) {
+    &:after {
+      display: none;
+    }
+  }
+  @media (max-width: 1200px) {
+    &-bottom {
+      .container {
+        padding-left: 15px;
+      }
+    }
+
+    .navbar {
+      &-nav {
+        & > li:not(last-child) {
+          margin-right: 5px;
+        }
+      }
+    }
+  }
+  @media (max-width: 991px) {
+    &-top {
+      .logo {
+        width: 250px;
+      }
+      .info {
+        &:first-child {
+          margin-right: 30px;
+        }
+      }
+    }
+  }
+  @media (max-width: 768px) {
+    &-bottom {
+      padding-top: 16px;
+      padding-bottom: 45px;
+    }
+
+    .navbar-toggler {
+      display: block;
+      span {
+        background-color: white;
+      }
+    }
+
+    .navbar {
+      width: 100%;
+      text-align: center;
+    }
+
+    .dropdown-toggle {
+      &:after {
+        display: none;
+      }
+    }
+
+    .dropdown-menu {
+      opacity: 1 !important;
+      visibility: visible !important;
+      a {
+        text-align: center;
+      }
+    }
+
+    .navbar-nav {
+      padding-top: 25px;
+    }
+
+    .nav-link {
+      padding: 10px 0;
+    }
+
+    .mini-cart {
+      position: absolute;
+      right: 25px;
+      top: 0px;
+    }
+  }
+  @media (max-width: 576px) {
+    .navbar-toggler {
+      display: block;
+    }
+
+    .dropdown-item {
+      white-space: normal;
+    }
+  }
+}

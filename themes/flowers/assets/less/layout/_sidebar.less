@@ -1,0 +1,187 @@
+.sidebar {
+  &-header {
+    .size(100%, 58px);
+    background-color: @green;
+    font-weight: 300;
+    text-transform: uppercase;
+    .flex-center();
+    margin-bottom: 10px;
+    color: white;
+  }
+  &-block {
+    border: 2px solid @white;
+    background-color: #ffffff;
+    padding: 25px 15px 35px 45px;
+    margin-bottom: 10px;
+    .categories {
+      font-weight: 300;
+      & > li {
+        position: relative;
+        & > a:before {
+          content: '+';
+          position: absolute;
+          left: -25px;
+          top: 0px;
+        }
+        &:not(:last-child) {
+          margin-bottom: 15px;
+        }
+      }
+      .current-cat, .current-cat-ancestor {
+        & > a {
+          color: @green;
+          &:before {
+            content: '-';
+          }
+        }
+        .children {
+          display: block;
+        }
+      }
+      .children {
+        display: none;
+        color: #666666;
+        font-size: 14px;
+        font-weight: 300;
+        line-height: 22px;
+        padding-left: 5px;
+      }
+    }
+  }
+  .filters {
+    padding: 30px 15px 15px;
+  }
+  .filter-block {
+    &:not(:last-child) {
+      padding-bottom: 10px;
+      margin-bottom: 10px;
+      border-bottom: 1px dashed @white;
+    }
+    .title {
+      color: @green;
+      font-family: "Exo 2";
+      font-size: 16px;
+      font-weight: 300;
+      display: block;
+      margin-bottom: 8px;
+    }
+    .select2 {
+      width: 100% !important;
+    }
+    &.price-filter {
+      .price-inputs {
+        font-size: 14px;
+        font-weight: 300;
+        color: #666666;
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        input {
+          .size(63px, 30px);
+          border: 1px solid @white;
+          background-color: @white;
+          text-align: center;
+          pointer-events: none;
+          .hide-number-arrows();
+        }
+      }
+      .ui-slider {
+        margin-top: 20px;
+        border-radius: 0;
+        margin-right: 15px;
+      }
+      .slider-range {
+        border: none;
+        background: @green;
+      }
+      .ui-slider-handle,
+      .ui-corner-all,
+      .ui-state-default {
+        outline: none !important;
+      }
+      .ui-widget-header {
+        border: 3.5px solid @green;
+      }
+      .ui-slider-horizontal {
+        height: 7px;
+        background-color: @white;
+      }
+      .ui-state-default,
+      .ui-widget-content .ui-state-default,
+      .ui-widget-header .ui-state-default,
+      .ui-button,
+      html .ui-button.ui-state-disabled:hover,
+      html .ui-button.ui-state-disabled:active {
+        .size(30px);
+        border: 1px solid #a6a6a6;
+        .background-image(linear-gradient(to top, #cecece 0%, @light 100%));
+        border-radius: 50%;
+        cursor: pointer;
+        top: -12px;
+        &:after {
+          content: '';
+          .size(14px);
+          .border-radius(50%);
+          background-color: @green;
+          position: absolute;
+          top: 7px;
+          left: 7px;
+        }
+      }
+    }
+    input[type=checkbox] {
+      display: none;
+      + label {
+        cursor: pointer;
+        position: relative;
+        font-size: 14px;
+        color: #666666;
+      }
+      & + label:before {
+        cursor: pointer;
+        .size(20px);
+        border: 1px solid #a6a6a6;
+        background-color: @white;
+        content: '';
+        display: inline-block;
+        position: relative;
+        margin-right: 5px;
+        top: 3px;
+      }
+      & + label:after {
+        .size(12px);
+        background-color: @green;
+        content: '';
+        display: inline-block;
+        position: absolute;
+        left: 4px;
+        top: 7px;
+        opacity: 0;
+        transition: opacity .3s;
+      }
+      &:checked + label {
+        color: @gray;
+        &:after {
+          opacity: 1;
+        }
+      }
+    }
+    .show-more {
+      color: #3791b3;
+      font-size: 14px;
+      font-weight: 300;
+    }
+    .hidden {
+      display: none;
+    }
+  }
+  .btn-white {
+    display: block;
+    margin: 0 auto;
+    background-color: @green;
+    color: white !important;
+    &:hover {
+      background-color: darken(@green, 8%);
+    }
+  }
+}
